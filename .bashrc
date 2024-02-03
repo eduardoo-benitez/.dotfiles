@@ -121,9 +121,8 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
 fi
 
 alias windowsfiles='cd /mnt/c/Users/eduar'
+alias updatesym='cp -rsf "$HOME/dotfiles"/. ~'
 
 export PS1="\[$(tput setaf 8)\]\u\[$(tput setaf 8)\]@\[$(tput setaf 8)\]\h \[$(tput setaf 15)\]\w \[$(tput sgr0)\]$ "
 
 LS_COLORS=$LS_COLORS:'di=7:' ; export LS_COLORS
-
-setterm blength 0
