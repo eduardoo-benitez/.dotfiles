@@ -116,13 +116,17 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# launch tmux -2 on start up
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
       exec tmux -2
 fi
 
+# aliases
 alias windowsfiles='cd /mnt/c/Users/eduar'
-alias updatesym='cp -rsf "$HOME/dotfiles"/. ~'
+alias sym='cp -rsf "$HOME/dotfiles"/. ~'
 
+# sets color of bash prompt
 export PS1="\[$(tput setaf 8)\]\u\[$(tput setaf 8)\]@\[$(tput setaf 8)\]\h \[$(tput setaf 15)\]\w \[$(tput sgr0)\]$ "
 
+# sets directory colors to inverse when using ls
 LS_COLORS=$LS_COLORS:'di=7:' ; export LS_COLORS
