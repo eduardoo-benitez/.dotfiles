@@ -33,9 +33,23 @@ set hlsearch
 
 set belloff=all
 
-
+"TODO: MOVE THESE KEY MAPPING TO A SEPERATE FILE SO ITS NOT SO UGLY IN HERE
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
+nnoremap U <C-R>
+noremap <bs> <c-^>
+
+nnoremap <leader>w b~
+
+:noremap <F2><CR> :let _save_pos=getpos(".") <Bar>
+    \ :let _s=@/ <Bar>
+    \ :%s/\s\+$//e <Bar>
+    \ :let @/=_s <Bar>
+    \ :nohl <Bar>
+    \ :unlet _s<Bar>
+    \ :call setpos('.', _save_pos)<Bar>
+    \ :unlet _save_pos<CR><CR>
 
 set background=dark
 set t_Co=256
