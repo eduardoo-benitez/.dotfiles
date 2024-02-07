@@ -14,7 +14,6 @@ call plug#end()
 set nocompatible
 
 filetype plugin indent on
-syntax on
 
 set number
 set relativenumber
@@ -33,7 +32,12 @@ set hlsearch
 
 set belloff=all
 
+let g:lsp_diagnostics_echo_cursor = 1
+
 "TODO: MOVE THESE KEY MAPPING TO A SEPERATE FILE SO ITS NOT SO UGLY IN HERE
+
+imap <c-@> <Plug>(asyncomplete_force_refresh)
+
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
