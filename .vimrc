@@ -1,3 +1,4 @@
+
 call plug#begin()
 
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -8,6 +9,7 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 
@@ -29,8 +31,11 @@ set showcmd
 
 set incsearch
 set hlsearch
+set ignorecase
 
 set belloff=all
+
+let mapleader = ","
 
 let g:lsp_diagnostics_echo_cursor = 1
 
@@ -40,6 +45,9 @@ imap <c-@> <Plug>(asyncomplete_force_refresh)
 
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
+vnoremap <silent> * : <C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
+vnoremap <silent> # : <C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 
 nnoremap U <C-R>
 noremap <bs> <c-^>
@@ -54,6 +62,8 @@ nnoremap <leader>w b~
     \ :unlet _s<Bar>
     \ :call setpos('.', _save_pos)<Bar>
     \ :unlet _save_pos<CR><CR>
+
+map <leader>ss :setlocal spell!<cr>
 
 " Changing cursor shape per mode
 " 1 or 0 -> blinking block

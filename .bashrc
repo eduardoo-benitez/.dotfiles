@@ -116,13 +116,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# bash terminal backround: R: 40, G: 42, B: 54
+
 # launch tmux -2 on start up
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
       exec tmux -2
 fi
 
 # aliases
-alias windowsfiles='cd /mnt/c/Users/eduar'
+alias wf='cd /mnt/c/Users/eduar'
 alias sym='cp -rsf "$HOME/dotfiles"/. ~'
 
 # sets color of bash prompt
