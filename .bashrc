@@ -125,6 +125,7 @@ fi
 
 # aliases
 alias wf='cd /mnt/c/Users/eduar'
+alias mob='cd /mnt/c/Users/eduar/ITSC4180-G22'
 alias sym='cp -rsf "$HOME/dotfiles"/. ~'
 
 # sets color of bash prompt
