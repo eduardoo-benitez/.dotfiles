@@ -27,7 +27,7 @@ set relativenumber "enable relative line numbers
 
 set autoindent "autoindent on new line
 set expandtab "set tabs to be spaces
-set softtabstop=4 "set tabs to be four spaces
+set softtabstop=4
 set shiftwidth=4
 set shiftround
 
@@ -35,8 +35,8 @@ set showmode
 set showcmd
 
 set incsearch
-set hlsearch
-set ignorecase
+set hlsearch "enable hlsearch
+set ignorecase "make searches not case sensitive
 
 set belloff=all
 
